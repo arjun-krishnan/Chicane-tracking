@@ -35,8 +35,8 @@ class Particle:
         p_ele=np.array([0,0,self.p])
         print("Tracking particle (E="+str(self.E)+" MeV)")
         while (rn[2]<Bf.z[-1]): 
-            #B=np.array([Bf.Bxfunc((rn[0],rn[2])),Bf.Byfunc((rn[0],rn[2])),Bf.Bzfunc((rn[0],rn[2]))])
-            B=np.array([0,Bf.Byfunc((0,rn[2])),0])
+            B=np.array([Bf.Bxfunc((rn[0],rn[2])),Bf.Byfunc((rn[0],rn[2])),Bf.Bzfunc((rn[0],rn[2]))])
+            #B=np.array([0,Bf.Byfunc((0,rn[2])),0])
             self.By.append(B[1])
             p_vec=np.sqrt(np.sum(p_ele**2,axis=0))
             gamma_vec=np.sqrt((p_vec/const.m_e/const.c)**2+1)
